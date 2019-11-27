@@ -7,7 +7,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get home" do
-    get static_pages_home_url
+    get root_path
     #was request sucessful
     assert_response :success
     #was correct layout used
@@ -17,7 +17,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get contact" do
-    get static_pages_contact_url
+    get contact_path
     #was request sucessful
     assert_response :success
     #was correct layout used
