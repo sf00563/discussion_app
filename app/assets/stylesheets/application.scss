@@ -13,26 +13,10 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
- @import "nav_bar";
+ @import "navigation";
  @import "static_pages";
 
  /*site wide*/
  body {
-   padding-top: 50px;
- }
-
- section {
-   overflow: auto;
- }
-
- textarea {
-   resize: vertical;
- }
-
- .center {
-   text-align: center;
- }
-
- .center h1 {
-   margin-bottom: 10px;
+   margin-top: 50px;
  }

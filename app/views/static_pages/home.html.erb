@@ -1,13 +1,15 @@
 <% provide(:title, "Home") %>
 <!DOCTYPE html>
-<div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
-
-  <h2>
-    This is the home page for the
-    <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </h2>
-
-  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+<div class="drawAttention">
+  <h1 class="bringForward">Discuss your ideas</h1>
+  <button id="about" class="bringForward btn btn-lg btn-primary">How to start</button>
+  <div class="bringForward popup-content">
+    <ol>
+      <li>Sign up and create an account</li>
+      <li>Choose a discussion topic</li>
+      <li>Create or view a discussion</li>
+      <li>Read posts from other users or create a post of your own</li>
+    </ol>
+    <button class="close">Close</button>
+  </div>
 </div>
