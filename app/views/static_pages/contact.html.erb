@@ -5,11 +5,10 @@
   <p><%= t 'contact_page_info_two' %></p>
 </div>
 <%= form_for @message, url: create_message_url do |f| %>
-  <%= notice %>
-  <%= @message.errors.full_messages.join(', ') %>
-
   <%= f.text_field :name, placeholder: 'Name' %>
   <%= f.email_field :email, placeholder: 'Email' %>
   <%= f.text_area :message, placeholder: 'Message' %>
   <%= f.submit 'Send', :class => 'submit_button' %>
+  <p class="success"><%= notice %></p>
+  <p class="errors"><%= @message.errors.full_messages.join(', ') %></p>
 <% end %>

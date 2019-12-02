@@ -17,6 +17,10 @@
  button{
    margin-top: 40px;
  }
+ button:focus,button:active {
+   outline: none !important;
+   box-shadow: none;
+}
  h1{
    margin-top: -30px;
    font-size: 60px;
@@ -71,6 +75,7 @@ input, textarea {
   margin-bottom: 10px;
   border: 2px solid black;
   margin: 10px auto;
+  outline:none;
 }
 
 input{
@@ -83,4 +88,18 @@ textarea {
 
 .submit_button:hover{
   background-color: #337ab7;
+}
+
+.errors {
+  margin: 50px;
+  text-align: center;
+  color: red;
+  font-size: 18px;
+}
+
+.success{
+  margin: 50px;
+  text-align: center;
+  color: green;
+  font-size: 18px;
 }
