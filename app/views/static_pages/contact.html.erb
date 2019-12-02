@@ -1,10 +1,15 @@
 <% provide(:title, "Contact") %>
-<!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-    <h1>Contact Page</h1>
-    <h1>Contact</h1>
-  </body>
-</html>
+<div class="contactBlurb">
+  <h1>Contact</h1>
+  <p>Have a question for our team? we’d love to hear from you!</p>
+  <p>Please fill out the contact form below and we will be in touch</p>
+</div>
+<%= form_for @message, url: create_message_url do |f| %>
+  <%= notice %>
+  <%= @message.errors.full_messages.join(', ') %>
+
+  <%= f.text_field :name, placeholder: 'Name' %>
+  <%= f.email_field :email, placeholder: 'Email' %>
+  <%= f.text_area :message, placeholder: 'Message' %>
+  <%= f.submit 'Send', :class => 'submit_button' %>
+<% end %>

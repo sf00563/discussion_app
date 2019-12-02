@@ -18,6 +18,10 @@
  @import "static_pages";
 
  /*site wide*/
- body {
-   margin-top: 50px;
+ html, body {
+   height: 100%;
  }
+
+body {
+  padding-top: 50px;
+}
