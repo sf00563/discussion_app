@@ -1,8 +1,8 @@
 <% provide(:title, "Contact") %>
 <div class="contactBlurb">
-  <h1>Contact</h1>
-  <p>Have a question for our team? we’d love to hear from you!</p>
-  <p>Please fill out the contact form below and we will be in touch</p>
+  <h1><%= t 'contact_page_title' %></h1>
+  <p><%= t 'contact_page_info_one' %></p>
+  <p><%= t 'contact_page_info_two' %></p>
 </div>
 <%= form_for @message, url: create_message_url do |f| %>
   <%= notice %>
