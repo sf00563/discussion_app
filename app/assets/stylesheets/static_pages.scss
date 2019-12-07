@@ -1,6 +1,7 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
 
 /*Home Page*/
 .drawAttention {
@@ -14,16 +15,29 @@
  flex-direction: column;
  align-items: center;
  justify-content: center;
+ h1{
+   margin-top: -30px;
+   font-size: 60px;
+ }
  button{
    margin-top: 40px;
  }
  button:focus,button:active {
    outline: none !important;
    box-shadow: none;
-}
- h1{
-   margin-top: -30px;
-   font-size: 60px;
+ }
+ .popup-content {
+   height: 175px;
+   max-width: 350px;
+   padding: 10px;
+   border: 1px solid white;
+   border-radius: 25px;
+   background-color: $midBlue;
+   margin-top: 15px;
+   ol li{
+     font-size: 18px;
+     margin-top: 5px;
+   }
  }
 }
 
@@ -41,19 +55,6 @@
   z-index: 1;
 }
 
-.popup-content {
-  height: 175px;
-  max-width: 350px;
-  padding: 10px;
-  border: 1px solid white;
-  border-radius: 25px;
-  background-color: #337ab7;
-  margin-top: 15px;
-  ol li{
-    font-size: 18px;
-    margin-top: 5px;
-  }
-}
 
 /*contact page*/
 .contactBlurb{
@@ -87,7 +88,7 @@ textarea {
 }
 
 .submit_button:hover{
-  background-color: #337ab7;
+  background-color: $midBlue;
 }
 
 .errors {

@@ -1,8 +1,10 @@
+@import "variables";
+
 #logo {
   float: left;
   margin-right: 20px;
   font-size: 20px;
-  color: #fff;
+  color: $blockWhite;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -10,6 +12,6 @@
 }
 
 #logo:hover {
-  color: #fff;
+  color: $midBlue;
   text-decoration: none;
 }
