@@ -62,33 +62,9 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 10px;
-  h1{
-    font-size: 40px;
-  }
   p{
     font-size: 20px;
   }
-}
-
-input, textarea {
-  display: block;
-  width: 50%;
-  margin-bottom: 10px;
-  border: 2px solid black;
-  margin: 10px auto;
-  outline:none;
-}
-
-input{
-  height: 40px;
-}
-
-textarea {
-  height: 200px;
-}
-
-.submit_button:hover{
-  background-color: $midBlue;
 }
 
 .errors {

@@ -25,3 +25,30 @@
 body {
   padding-top: 50px;
 }
+
+h1{
+  font-size: 40px;
+  text-align: center;
+  margin: 30px 0px;
+}
+
+input, textarea {
+  display: block;
+  width: 50%;
+  margin-bottom: 10px;
+  border: 2px solid black;
+  margin: 10px auto;
+  outline:none;
+}
+
+input{
+  height: 40px;
+}
+
+textarea {
+  height: 200px;
+}
+
+.submit_button:hover{
+  background-color: $midBlue;
+}
