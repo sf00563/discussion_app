@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  devise_for :users
+  root to: 'static_pages#home'
   get 'home' => 'static_pages#home'
   get 'contact' => 'static_pages#contact'
   post 'contact' => 'static_pages#create', as: 'create_message'
