@@ -1,5 +1,5 @@
-<h1>Log in</h1>
-
+<% provide(:title, "Log in") %>
+<h1><%= t 'login.login_page_title' %></h1>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.email_field :email, placeholder:'email', autofocus: true, autocomplete: "email" %>
@@ -13,5 +13,3 @@
     <%= f.submit "Log in", :class => 'submit_button' %>
   </div>
 <% end %>
-
-<div class="loginlinks"><%= render "devise/shared/links" %></div>

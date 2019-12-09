@@ -16,7 +16,6 @@
  @import "navigation";
  @import "footer";
  @import "static_pages";
- @import "login";
 
  /*site wide*/
  html, body {
@@ -48,6 +47,15 @@ input{
 
 textarea {
   height: 200px;
+}
+
+.notice, .alert {
+  margin: 0 10px;
+  position: absolute;
+  color: $blockWhite;
+  z-index: 1;
+  font-size: 20px;
+  top: 100px;
 }
 
 .submit_button:hover{

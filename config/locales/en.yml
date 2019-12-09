@@ -41,6 +41,12 @@ en:
     home_page_user_instruction_three: "Create or view a discussion"
     home_page_user_instruction_four: "Read posts from other users on a discussion or create your own"
 
+  signup:
+    signup_page_title: "Sign up"
+
+  login:
+    login_page_title: "Log in"
+
   contact:
     contact_page_title: "Contact"
     contact_page_info_one: "Have a question for our team? we’d love to hear from you!"

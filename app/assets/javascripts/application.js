@@ -18,7 +18,6 @@
 $(document).ready(function(){
   $(".popup-content").hide();
   $("#about").click(function(){
-    console.log('hello');
     $(".popup-content").toggle("slow");
   });
 });
@@ -30,4 +29,10 @@ $(document).ready(function() {
 
   if (footerTop < docHeight)
       $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
+});
+
+$(document).ready(function(){
+   setTimeout(function(){
+      $("p.notice").hide("slow");
+   },1000);
 });
