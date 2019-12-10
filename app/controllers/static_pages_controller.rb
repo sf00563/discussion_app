@@ -1,11 +1,15 @@
 class StaticPagesController < ApplicationController
+
+  #controller for Home page
   def home
   end
 
+  #controller for contact page
   def contact
     @message = Message.new
   end
 
+  #create controller for contact page when form is submitted
   def create
     @message = Message.new message_params
 

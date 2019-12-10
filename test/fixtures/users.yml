@@ -4,12 +4,15 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
+
+#required by devise
 one:
  email: test1@test.com
 
 two:
  email: test2@test.com
 
+#used when testing a signup
 defaultUser:
  name: hafizblubis
  email: hafizbadrie@hotmail.com

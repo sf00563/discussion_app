@@ -6,7 +6,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     @after_bar_title = "Discussion"
   end
 
-  test "should get home" do
+  test "GET home" do
     get root_path
     #was request sucessful
     assert_response :success
@@ -18,7 +18,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "h1", "What is on your mind?"
   end
 
-  test "should get contact" do
+  test "GET contact" do
     get contact_path
     #was request sucessful
     assert_response :success

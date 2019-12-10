@@ -1,5 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
 
+  #Wanted to add a name to devise aswell, this allows name to be save to user model
   private
 
   def sign_up_params
