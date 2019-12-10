@@ -7,5 +7,10 @@
 one:
  email: test1@test.com
 
-two: 
+two:
  email: test2@test.com
+
+defaultUser:
+ name: hafizblubis
+ email: hafizbadrie@hotmail.com
+ encrypted_password: $2a$10$8uCZ9wCTsFoqa0aIfpssne4qtchcpqhepdU5WylZwh4GBAkgFWEYe

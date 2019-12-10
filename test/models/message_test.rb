@@ -17,13 +17,13 @@ class MessageTest < ActiveSupport::TestCase
     }
 
     msg = Message.new attributes
-    assert msg.valid?, 'should be valid'
+    assert msg.valid?, 'the attributes were not valid'
   end
 
   test 'name, email and body are required' do
     msg = Message.new
 
-    refute msg.valid?, 'Blank Mesage are invalid'
+    refute msg.valid?, 'Blank Messages are appearing valid'
 
     assert_match /blank/, msg.errors[:name].to_s
     assert_match /blank/, msg.errors[:email].to_s
