@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+DiscussionTopic.destroy_all
+
+DiscussionTopic.create!([{
+  topic: "Sport"
+},
+{
+  topic: "Food"
+},
+{
+  topic: "Relationships"
+},
+{
+  topic: "Health"
+},
+{
+  topic: "News"
+},
+{
+  topic: "Other"
+}])
+
+
+p "Created #{DiscussionTopic.count} discussion topics"
