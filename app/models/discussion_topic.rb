@@ -1,4 +1,7 @@
 class DiscussionTopic < ApplicationRecord
+
+  has_many :discussions
+
   validates :topic, presence: true
   validate :topic, :topic_starts_with_capital_letter
 
@@ -7,4 +10,5 @@ class DiscussionTopic < ApplicationRecord
       errors.add(:topic, "Must start with a capital letter")
     end
   end
+  
 end
