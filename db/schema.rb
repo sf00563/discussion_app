@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_224106) do
+ActiveRecord::Schema.define(version: 2019_12_10_235857) do
 
   create_table "discussion_topics", force: :cascade do |t|
     t.string "topic", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "discussions", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
