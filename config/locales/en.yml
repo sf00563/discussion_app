@@ -52,6 +52,9 @@ en:
     contact_page_info_one: "Have a question for our team? we’d love to hear from you!"
     contact_page_info_two: "Please fill out the contact form below and we will be in touch"
 
+  discussiontopics:
+    discussiontopics_page_title: "Discussion topics"
+
   message_mailer:
     contact_me:
       subject: "Message from Discussion"
