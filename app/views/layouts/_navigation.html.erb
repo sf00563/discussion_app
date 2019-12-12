@@ -6,7 +6,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <% if current_user %>
-          <li><%= link_to "Discussion topics",   '#' %></li>
+          <li><%= link_to "Discussion topics", discussiontopics_path %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign up", new_user_registration_path %></li>

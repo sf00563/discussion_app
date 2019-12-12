@@ -36,3 +36,9 @@ $(document).ready(function(){
       $("p.notice").hide("slow");
    },1000);
 });
+
+$(document).ready(function() {
+  $(".topicTile").mouseenter(function() {
+    $(this).toggleClass('rotated');
+  })
+});
