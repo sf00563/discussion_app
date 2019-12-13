@@ -6,6 +6,7 @@
   margin: 15px 30px;
   .topicTile {
     display: flex;
+    opacity: 0;
     align-items: flex-end;
     border: 2px solid black;
     width: 25%;
@@ -19,12 +20,44 @@
       height: 40px;
       background-color: black;
       opacity: 0.8;
+      a{
+        text-decoration: none;
+      }
       p{
         text-align: center;
         color: $blockWhite;
-        font-size: 20px;
-        margin-top: 5px;
+        font-size: 28px;
+        text-transform: uppercase;
+      }
+      p:hover{
+        color: $midBlue;
       }
     }
   }
+}
+
+.createDiscussion{
+  display: inline-block;
+  padding: 5px;
+  border: 2px solid black;
+  margin-bottom: 20px;
+  margin-left: 15px;
+}
+
+table {
+  width: 90%;
+  margin: 0 auto;
+  .options {
+    margin: 5px;
+  }
+}
+
+table, tr, td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+thead tr td {
+  font-weight: bold;
+  font-size: 15px;
 }

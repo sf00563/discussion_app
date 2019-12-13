@@ -1,0 +1,28 @@
+<h1><%= @discussions.count > 0 ? @discussions.first.discussion_topic.topic : @discussions.count%> Discussion's</h1>
+<a class="createDiscussion" href="#">Create Discussion</a>
+<table>
+  <thead>
+    <tr>
+      <td>Title</td>
+      <td>Brief description</td>
+      <td>Date created</td>
+      <td>Created by</td>
+      <td>Options</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @discussions.each do |discussion| %>
+      <td><a class="discussionLink" href="#"><%= discussion.title %></a></td>
+      <td><%= truncate(discussion.content,:length => 80) %></td>
+      <td><%= discussion.created_at %></td>
+      <td><%= discussion.user.name %></td>
+      <% if current_user.id == discussion.user.id %>
+      <td><a class="options" href="#">Edit</a><a class="options" href="#">Delete</a></td>
+      <% else %>
+      <td>unavaliable<td>
+      <% end %>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

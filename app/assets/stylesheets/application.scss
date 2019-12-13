@@ -74,11 +74,6 @@ textarea {
   }
 }
 
-.rotated {
-  -webkit-transform: rotate(360deg);  /* Chrome, Safari 3.1+ */
-  -moz-transform: rotate(360deg);  /* Firefox 3.5-15 */
-  -ms-transform: rotate(360deg);  /* IE 9 */
-  -o-transform: rotate(360deg);  /* Opera 10.50-12.00 */
-  transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera 12.10+ */
-  transition: 2s;
+a {
+  text-decoration: none !important;
 }

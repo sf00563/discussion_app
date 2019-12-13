@@ -37,8 +37,10 @@ $(document).ready(function(){
    },1000);
 });
 
-$(document).ready(function() {
-  $(".topicTile").mouseenter(function() {
-    $(this).toggleClass('rotated');
-  })
+$(document).ready(function(){
+  $(".topicTile").each(function() {
+    $(this).animate({
+      opacity: 1
+    }, 3000);
+  });
 });
