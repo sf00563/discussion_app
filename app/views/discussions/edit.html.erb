@@ -1,0 +1,12 @@
+<h1>Edit discussion</h1>
+<form action="/discussions/<%= @discussion.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>
+    <input type="text" name="discussion[title]" value="<%= @discussion.title %>">
+  </p>
+  <p>
+    <textarea type="text" name="discussion[content]"><%= @discussion.content %></textarea>
+  </p>
+  <input class="submit_button" type="submit" value="update">
+</form>

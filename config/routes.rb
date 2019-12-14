@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   post 'contact' => 'static_pages#create', as: 'create_message'
   get 'discussiontopics' => 'discussiontopics#index'
   get 'discussiontopics/:id' => 'discussiontopics#show'
+  get 'discussions/:id' => 'discussions#show'
+  get 'discussions/:id/edit' => 'discussions#edit'
+  patch 'discussions/:id' => 'discussions#update'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
