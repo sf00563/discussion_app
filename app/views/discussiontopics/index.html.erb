@@ -4,7 +4,7 @@
   <% @discussionTopics.each do |discussionTopic| %>
   <div class="topicTile" style="background-image: url('/assets/<%= discussionTopic.topic.downcase %>.jpg');">
     <div class="topicTitle">
-      <a href="/discussiontopics/<%= discussionTopic.id %>"><p><%= discussionTopic.topic %></p></a>
+      <p><%= link_to "#{discussionTopic.topic}", discussiontopics_discussions_path(discussionTopic.id) %></p>
     </div>
   </div>
   <% end %>
