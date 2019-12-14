@@ -1,14 +1,15 @@
+<%# Shows all of the discussions for a given topic %>
 <% provide(:title, "Discussions") %>
-<h1><%= @discussions.count > 0 ? @discussions.first.discussion_topic.topic : @discussions.count%> Discussion's</h1>
+<h1><%= @discussions.count > 0 ? @discussions.first.discussion_topic.topic : @discussions.count%> <%= t 'discussiontopics.show.part_of_title' %></h1>
 <%= link_to "Create Discussion", new_discussion_path(params[:id]), class: "createDiscussion" %>
 <table>
   <thead>
     <tr>
-      <td>Title</td>
-      <td>Brief description</td>
-      <td>Date created</td>
-      <td>Created by</td>
-      <td>Options</td>
+      <td><%= t 'discussiontopics.show.table_header_one' %></td>
+      <td><%= t 'discussiontopics.show.table_header_two' %></td>
+      <td><%= t 'discussiontopics.show.table_header_three' %></td>
+      <td><%= t 'discussiontopics.show.table_header_four' %></td>
+      <td><%= t 'discussiontopics.show.table_header_five' %></td>
     </tr>
   </thead>
   <tbody>
@@ -21,7 +22,7 @@
       <% if current_user.id == discussion.user.id %>
       <td><%= link_to "Edit", edit_discussion_path(discussion.id), class: "options" %><%= link_to "Delete", discussion_path(discussion.id), class: "options", data: {method: :delete, confirm: "Are you sure?"} %></td>
       <% else %>
-      <td>unavaliable<td>
+      <td><%= t 'discussiontopics.show.options_unavaliable' %><td>
       <% end %>
     </tr>
     <% end %>

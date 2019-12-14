@@ -1,9 +1,10 @@
+<% provide(:title, "Current Discussion") %>
 <h1><%= @discussion.title %></h1>
 <div class="content">
   <p><%= @discussion.content %></p>
 </div>
 <div class="comments-container">
-  <h2>Comments</h2>
+  <h2><%= t 'discussion.show.comment_title' %></h2>
   <div class="comment">
     <p>This is a comment, i think tiger is goos</p>
     <a href="#">Edit</a>

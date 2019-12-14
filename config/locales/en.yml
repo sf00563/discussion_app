@@ -54,6 +54,27 @@ en:
 
   discussiontopics:
     discussiontopics_page_title: "Discussion topics"
+    show:
+      part_of_title: "Discussion's"
+      table_header_one: "Title"
+      table_header_two: "Brief description"
+      table_header_three: "Date created"
+      table_header_four: "Created by"
+      table_header_five: "Options"
+      options_unavaliable: "unavaliable"
+
+  discussion:
+    edit:
+      edit_page_title: "Edit discussion"
+    new:
+      new_page_title: "New discussion"
+    show:
+      comment_title: "Comments"
+    error_header: "Error"
+
+
+  footer:
+    copyright: "Copyright 2019, Sassy Foods"
 
   message_mailer:
     contact_me:
