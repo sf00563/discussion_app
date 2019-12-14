@@ -1,6 +1,7 @@
 class DiscussionsController < ApplicationController
   def show
     @discussion = Discussion.find(params[:id])
+    @comments = Comment.where('discussion_id = ?', params[:id])
   end
 
   def edit

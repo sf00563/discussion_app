@@ -5,14 +5,14 @@
 </div>
 <div class="comments-container">
   <h2><%= t 'discussion.show.comment_title' %></h2>
+  <a href="#">Add comment</a>
+  <% @comments.each do |comment| %>
   <div class="comment">
-    <p>This is a comment, i think tiger is goos</p>
+    <p><%= comment.comment %></p>
+    <% if current_user.id == comment.user_id %>
     <a href="#">Edit</a>
     <a href="#">Delete</a>
+    <% end %>
   </div>
-  <div class="comment">
-    <p>This is a comment, i think tiger is goos</p>
-    <a href="#">Edit</a>
-    <a href="#">Delete</a>
-  </div>
+  <% end %>
 </div>
