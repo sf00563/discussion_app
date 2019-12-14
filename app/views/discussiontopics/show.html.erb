@@ -18,7 +18,7 @@
       <td><%= discussion.created_at %></td>
       <td><%= discussion.user.name %></td>
       <% if current_user.id == discussion.user.id %>
-      <td><a class="options" href="/discussions/<%= discussion.id %>/edit">Edit</a><a class="options" href="#">Delete</a></td>
+      <td><a class="options" href="/discussions/<%= discussion.id %>/edit">Edit</a><a class="options" href="/discussions/<%= discussion.id %>" data-method="delete" data-confirm="Are you sure?">Delete</a></td>
       <% else %>
       <td>unavaliable<td>
       <% end %>

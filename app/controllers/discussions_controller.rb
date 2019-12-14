@@ -31,6 +31,12 @@ class DiscussionsController < ApplicationController
     end
   end
 
+  def destroy
+    discussion = Discussion.find(params[:id])
+    discussion.destroy
+    redirect_to "/discussiontopics"
+  end
+
   private
     def discussion_params
       params.require(:discussion).permit(:title, :content)

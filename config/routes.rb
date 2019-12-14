@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   patch 'discussions/:id' => 'discussions#update'
   get 'discussions/new/:discussiontopicid' => 'discussions#new'
   post "discussions" => "discussions#create"
+  delete "discussions/:id" => "discussions#destroy"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
