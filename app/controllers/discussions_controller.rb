@@ -10,10 +10,10 @@ class DiscussionsController < ApplicationController
   def update
     discussion = Discussion.find(params[:id])
     if discussion.update(discussion_params)
-      redirect_to "/discussiontopics/#{discussion.discussion_topic_id}"
+      redirect_to discussiontopics_discussions_path(discussion.discussion_topic_id)
     else
       flash[:errors] = discussion.errors.full_messages
-      redirect_to "/discussions/#{discussion.id}/edit"
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -24,10 +24,10 @@ class DiscussionsController < ApplicationController
   def create
     discussion = Discussion.new(discussion_params_create)
     if discussion.save
-      redirect_to "/discussiontopics/#{params[:discussion][:discussion_topic_id]}"
+      redirect_to discussiontopics_discussions_path(params[:discussion][:discussion_topic_id])
     else
       flash[:errors] = discussion.errors.full_messages
-      redirect_to "/discussions/new/#{params[:discussion][:discussion_topic_id]}"
+      redirect_back(fallback_location: root_path)
     end
   end
 
