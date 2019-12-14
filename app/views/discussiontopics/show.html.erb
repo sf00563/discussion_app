@@ -20,9 +20,9 @@
       <td><%= discussion.created_at %></td>
       <td><%= discussion.user.name %></td>
       <% if current_user.id == discussion.user.id %>
-      <td><%= link_to "Edit", edit_discussion_path(discussion.id), class: "options" %><%= link_to "Delete", discussion_path(discussion.id), class: "options", data: {method: :delete, confirm: "Are you sure?"} %></td>
+        <td><%= link_to "Edit", edit_discussion_path(discussion.id), class: "options" %><%= link_to "Delete", discussion_path(discussion.id), class: "options", data: {method: :delete, confirm: "Are you sure?"} %></td>
       <% else %>
-      <td><%= t 'discussiontopics.show.options_unavaliable' %><td>
+        <td><%= t 'discussiontopics.show.options_unavaliable' %></td>
       <% end %>
     </tr>
     <% end %>

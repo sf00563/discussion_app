@@ -61,7 +61,7 @@ en:
       table_header_three: "Date created"
       table_header_four: "Created by"
       table_header_five: "Options"
-      options_unavaliable: "unavaliable"
+      options_unavaliable: "n/a"
 
   discussion:
     edit:
