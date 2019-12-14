@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get 'discussions/:id' => 'discussions#show'
   get 'discussions/:id/edit' => 'discussions#edit'
   patch 'discussions/:id' => 'discussions#update'
+  get 'discussions/new/:discussiontopicid' => 'discussions#new'
+  post "discussions" => "discussions#create"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,5 +1,5 @@
 <h1><%= @discussions.count > 0 ? @discussions.first.discussion_topic.topic : @discussions.count%> Discussion's</h1>
-<a class="createDiscussion" href="#">Create Discussion</a>
+<a class="createDiscussion" href="/discussions/new/<%= params[:id] %>">Create Discussion</a>
 <table>
   <thead>
     <tr>
@@ -11,8 +11,8 @@
     </tr>
   </thead>
   <tbody>
+    <% @discussions.each do |discussion| %>
     <tr>
-      <% @discussions.each do |discussion| %>
       <td><a class="discussionLink" href="/discussions/<%= discussion.id %>"><%= discussion.title %></a></td>
       <td><%= truncate(discussion.content,:length => 80) %></td>
       <td><%= discussion.created_at %></td>
@@ -22,7 +22,7 @@
       <% else %>
       <td>unavaliable<td>
       <% end %>
-      <% end %>
     </tr>
+    <% end %>
   </tbody>
 </table>

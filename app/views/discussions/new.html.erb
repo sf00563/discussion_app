@@ -1,0 +1,19 @@
+<h1>New discussion</h1>
+<form action="/discussions" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>
+    <input type="text" placeholder="Title" name="discussion[title]">
+  </p>
+  <p>
+    <textarea type="text" placeholder="Content" name="discussion[content]"></textarea>
+  </p>
+  <input type="hidden" name="discussion[user_id]" value="<%= current_user.id %>">
+  <input type="hidden" name="discussion[discussion_topic_id]" value="<%= params[:discussiontopicid] %>">
+  <input type="submit" class="submit_button" value="Create">
+</form>
+<% if flash[:errors] %>
+  <h2 class="editError">Error</h2>
+  <% flash[:errors].each do |e| %>
+    <p class="editError"><%= e %></p>
+  <% end %>
+<% end %>

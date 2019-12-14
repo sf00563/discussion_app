@@ -10,3 +10,9 @@
   </p>
   <input class="submit_button" type="submit" value="update">
 </form>
+<% if flash[:errors] %>
+  <h2 class="editError">Error</h2>
+  <% flash[:errors].each do |e| %>
+    <p class="editError"><%= e %></p>
+  <% end %>
+<% end %>
