@@ -17,8 +17,8 @@ class DiscussiontopicsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get show" do
-    discussion = discussions(:validDiscussion)
-    get discussiontopics_discussions_path(discussion)
+    #can pass in one because the discussion topics are provided by default not user added
+    get discussiontopics_discussions_path(1)
     assert_response :success
     assert_select "title", "Discussions | #{@after_bar_title}"
     assert_select 'table' do

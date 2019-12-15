@@ -8,7 +8,7 @@
   <%= link_to "Add comment", new_comment_path(@discussion.id) %>
   <% @comments.each do |comment| %>
   <div class="comment">
-    <p><%= comment.user.name %>: <%= comment.comment %></p>
+    <p><%= comment.comment %></p>
     <% if current_user.id == comment.user_id %>
     <%= link_to "Edit", edit_comment_path(comment.id) %>
     <%= link_to "Delete", comment_path(comment.id), class: "options", data: {method: :delete, confirm: "Are you sure?"} %>
