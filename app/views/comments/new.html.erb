@@ -1,4 +1,4 @@
-<h1>Add a comment</h1>
+<h1><%= t 'comment.new.new_page_title' %></h1>
 <form action="/comments" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>
@@ -9,7 +9,7 @@
   <input type="submit" class="submit_button" value="Create">
 </form>
 <% if flash[:errors] %>
-  <h2 class="editError">Error</h2>
+  <h2 class="editError"><%= t 'comment.error_header' %></h2>
   <% flash[:errors].each do |e| %>
     <p class="editError"><%= e %></p>
   <% end %>

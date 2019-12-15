@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     comment = Comment.new(comment_params)
 
     if comment.save
-      redirect_to "/discussions/#{params[:comment][:discussion_id]}"
+      redirect_to discussion_path(params[:comment][:discussion_id])
     else
       flash[:errors] = comment.errors.full_messages
       redirect_back(fallback_location: root_path)

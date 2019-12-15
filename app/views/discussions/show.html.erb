@@ -5,13 +5,13 @@
 </div>
 <div class="comments-container">
   <h2><%= t 'discussion.show.comment_title' %></h2>
-  <a href="/comments/new/<%= @discussion.id %>">Add comment</a>
+  <%= link_to "Add comment", new_comment_path(@discussion.id) %>
   <% @comments.each do |comment| %>
   <div class="comment">
     <p><%= comment.user.name %>: <%= comment.comment %></p>
     <% if current_user.id == comment.user_id %>
-    <a href="/comments/<%= comment.id %>/edit">Edit</a>
-    <a href="/comments/<%= comment.id %>" data-method="delete" data-confirm="Are you sure?">Delete</a>
+    <%= link_to "Edit", edit_comment_path(comment.id) %>
+    <%= link_to "Delete", comment_path(comment.id), class: "options", data: {method: :delete, confirm: "Are you sure?"} %>
     <% end %>
   </div>
   <% end %>

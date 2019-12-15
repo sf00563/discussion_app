@@ -16,10 +16,10 @@ Rails.application.routes.draw do
   post 'discussions' => 'discussions#create'
   delete 'discussions/:id' => 'discussions#destroy'
 
-  get '/comments/new/:discussionid' => 'comments#new'
+  get '/comments/new/:discussionid' => 'comments#new', as: 'new_comment'
   post 'comments' => 'comments#create'
-  get 'comments/:id/edit' => 'comments#edit'
+  get 'comments/:id/edit' => 'comments#edit', as: 'edit_comment'
   patch 'comments/:id' => 'comments#update'
-  delete 'comments/:id' => 'comments#destroy'
+  delete 'comments/:id' => 'comments#destroy', as: 'comment'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

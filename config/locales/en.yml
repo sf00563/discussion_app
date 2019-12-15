@@ -72,6 +72,13 @@ en:
       comment_title: "Comments"
     error_header: "Error"
 
+  comment:
+    edit:
+      edit_page_title: "Edit comment"
+    new:
+      new_page_title: "New comment"
+    error_header: "Error"
+
 
   footer:
     copyright: "Copyright 2019, Sassy Foods"

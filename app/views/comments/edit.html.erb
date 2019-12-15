@@ -1,4 +1,4 @@
-<h1>Edit Comment</h1>
+<h1><%= t 'comment.edit.edit_page_title' %></h1>
 <form action="/comments/<%= @comment.id %>" method="post">
   <input type="hidden" name="_method" value="patch">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -8,7 +8,7 @@
   <input type="submit" class="submit_button" value="Update">
 </form>
 <% if flash[:errors] %>
-  <h2 class="editError">Error</h2>
+  <h2 class="editError"><%= t 'comment.error_header' %></h2>
   <% flash[:errors].each do |e| %>
     <p class="editError"><%= e %></p>
   <% end %>
