@@ -23,12 +23,18 @@ class DiscussionTest < ActiveSupport::TestCase
   end
 
   test 'association to comments' do
-    assert_equal 2, @discussion.comments.size
+    assert_equal 3, @discussion.comments.size
   end
 
   test 'scope that was placed on comments' do
     assert_includes @discussion.comments, comments(:one)
     refute_includes @discussion.comments, comments(:old)
   end
-  
+
+  test 'dependent destroy on comments' do
+    comment = comments(:validComment)
+    @discussion.destroy
+    assert_raise(ActiveRecord::RecordNotFound) { comment.reload }
+  end
+
 end

@@ -12,3 +12,8 @@ old:
   comment: MyText
   discussion: validDiscussion
   created_at: <%= 3.weeks.ago %>
+
+validComment:
+  comment: This is a comment
+  discussion: validDiscussion
+  user: defaultUser

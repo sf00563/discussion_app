@@ -29,5 +29,24 @@ class UserTest < ActiveSupport::TestCase
     refute @user.valid_password?(@user.encrypted_password)
   end
 
+  test 'association to comments' do
+    assert_equal 1, @user.comments.size
+  end
+
+  test 'association to discussions' do
+    assert_equal 1, @user.discussions.size
+  end
+
+  test 'dependent destroy for comments' do
+    comment = comments(:validComment)
+    @user.destroy
+    assert_raise(ActiveRecord::RecordNotFound) { comment.reload }
+  end
+
+  test 'dependent destroy for discussions' do
+    discussion = discussions(:validDiscussion)
+    @user.destroy
+    assert_raise(ActiveRecord::RecordNotFound) { discussion.reload }
+  end
 
 end
