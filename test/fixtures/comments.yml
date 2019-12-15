@@ -7,3 +7,8 @@ one:
 two:
   comment: MyText
   discussion: validDiscussion
+
+old:
+  comment: MyText
+  discussion: validDiscussion
+  created_at: <%= 3.weeks.ago %>

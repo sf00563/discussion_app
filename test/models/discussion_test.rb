@@ -27,6 +27,8 @@ class DiscussionTest < ActiveSupport::TestCase
   end
 
   test 'scope that was placed on comments' do
+    assert_includes @discussion.comments, comments(:one)
+    refute_includes @discussion.comments, comments(:old)
   end
-
+  
 end
