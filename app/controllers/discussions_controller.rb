@@ -19,7 +19,7 @@ class DiscussionsController < ApplicationController
   end
 
   def new
-
+    @discussion = Discussion.new
   end
 
   def create

@@ -1,12 +1,9 @@
+<% provide(:title, "Edit comment") %>
 <h1><%= t 'comment.edit.edit_page_title' %></h1>
-<form action="/comments/<%= @comment.id %>" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>
-    <textarea type="text" placeholder="Comment" name="comment[comment]"><%= @comment.comment %></textarea>
-  </p>
-  <input type="submit" class="submit_button" value="Update">
-</form>
+<%= form_for(@comment) do |f| %>
+  <%= f.text_area :comment, placeholder: 'Comment' %>
+  <%= f.submit :class => 'submit_button' %>
+<% end %>
 <% if flash[:errors] %>
   <h2 class="editError"><%= t 'comment.error_header' %></h2>
   <% flash[:errors].each do |e| %>

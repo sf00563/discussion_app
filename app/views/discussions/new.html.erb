@@ -1,17 +1,12 @@
 <% provide(:title, "New Discussion") %>
 <h1><%= t 'discussion.new.new_page_title' %></h1>
-<form action="/discussions" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>
-    <input type="text" placeholder="Title" name="discussion[title]">
-  </p>
-  <p>
-    <textarea type="text" placeholder="Content" name="discussion[content]"></textarea>
-  </p>
-  <input type="hidden" name="discussion[user_id]" value="<%= current_user.id %>">
-  <input type="hidden" name="discussion[discussion_topic_id]" value="<%= params[:discussiontopicid] %>">
-  <input type="submit" class="submit_button" value="Create">
-</form>
+<%= form_for(@discussion) do |f| %>
+  <%= f.text_field :title, placeholder: 'Title' %>
+  <%= f.text_area :content, placeholder: 'Content' %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :discussion_topic_id, value: params[:discussiontopicid] %>
+  <%= f.submit :class => 'submit_button' %>
+<% end %>
 <% if flash[:errors] %>
   <h2 class="editError"><%= t 'discussion.error_header' %></h2>
   <% flash[:errors].each do |e| %>

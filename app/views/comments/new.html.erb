@@ -1,13 +1,11 @@
+<% provide(:title, "New comment") %>
 <h1><%= t 'comment.new.new_page_title' %></h1>
-<form action="/comments" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>
-    <textarea type="text" placeholder="Comment" name="comment[comment]"></textarea>
-  </p>
-  <input type="hidden" name="comment[user_id]" value="<%= current_user.id %>">
-  <input type="hidden" name="comment[discussion_id]" value="<%= params[:discussionid] %>">
-  <input type="submit" class="submit_button" value="Create">
-</form>
+<%= form_for(@comment) do |f| %>
+  <%= f.text_area :comment, placeholder: 'Comment' %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :discussion_id, value: params[:discussionid] %>
+  <%= f.submit :class => 'submit_button' %>
+<% end %>
 <% if flash[:errors] %>
   <h2 class="editError"><%= t 'comment.error_header' %></h2>
   <% flash[:errors].each do |e| %>
