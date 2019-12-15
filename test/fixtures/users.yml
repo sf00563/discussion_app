@@ -17,3 +17,8 @@ defaultUser:
  name: hafizblubis
  email: hafizbadrie@hotmail.com
  encrypted_password: $2a$10$8uCZ9wCTsFoqa0aIfpssne4qtchcpqhepdU5WylZwh4GBAkgFWEYe
+
+user_001:
+  id: 1
+  email: test@gmail.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
