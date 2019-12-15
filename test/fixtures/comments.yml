@@ -2,6 +2,8 @@
 
 one:
   comment: MyText
+  discussion: validDiscussion
 
 two:
   comment: MyText
+  discussion: validDiscussion

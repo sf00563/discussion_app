@@ -3,7 +3,15 @@
 one:
   title: Hello
   content: MyText
+  discussion_topic: validDiscussionTopic
 
 two:
   title: Hellos
   content: MyText
+  discussion_topic: validDiscussionTopic
+
+validDiscussion:
+  title: Tiger woods
+  content: Tiger is good at golf
+  discussion_topic: validDiscussionTopic
+  user: defaultUser
