@@ -9,19 +9,19 @@
 }
 
 .comments-container {
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   h2{
     margin-top: 30px;
-    font-size: 18px;
+    font-size: 25px;
   }
   .comment{
     padding: 10px;
     border: 1px solid black;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 }
 
