@@ -5,12 +5,12 @@
 </div>
 <div class="comments-container">
   <h2><%= t 'discussion.show.comment_title' %></h2>
-  <a href="#">Add comment</a>
+  <a href="/comments/new/<%= @discussion.id %>">Add comment</a>
   <% @comments.each do |comment| %>
   <div class="comment">
-    <p><%= comment.comment %></p>
+    <p><%= comment.user.name %>: <%= comment.comment %></p>
     <% if current_user.id == comment.user_id %>
-    <a href="#">Edit</a>
+    <a href="/comments/<%= comment.id %>/edit">Edit</a>
     <a href="#">Delete</a>
     <% end %>
   </div>
