@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  #controller for contact page
+  #controller for contact page, allows form to access message object
   def contact
     @message = Message.new
   end
@@ -23,7 +23,7 @@ class StaticPagesController < ApplicationController
   end
 
   private
-
+  #strong parameters to take in input from user
   def message_params
     params.require(:message).permit(:name, :email, :message)
   end

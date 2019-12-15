@@ -7,19 +7,18 @@ class DiscussionsControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:user_001)
     post user_session_url
     @after_bar_title = "Discussion"
+    @discussion = discussions(:validDiscussion)
   end
 
   test "the action show success" do
-    discussion = discussions(:validDiscussion)
-    get discussion_path(discussion)
+    get discussion_path(@discussion)
     assert_response :success
     assert_select "title", "Current Discussion | #{@after_bar_title}"
     assert_select "h2", "Comments"
   end
 
   test "the edit action success" do
-    discussion = discussions(:validDiscussion)
-    get edit_discussion_path(discussion)
+    get edit_discussion_path(@discussion)
     assert_response :success
     assert_select "h1", "Edit discussion"
     assert_select 'form' do
@@ -30,14 +29,12 @@ class DiscussionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "the update action success" do
-    discussion = discussions(:validDiscussion)
-    patch discussion_path(discussion), params: { discussion: { title: 'Rails is awesome!', content: 'Hello Rails' } }
+    patch discussion_path(@discussion), params: { discussion: { title: 'Rails is awesome!', content: 'Hello Rails' } }
     assert_response :redirect
   end
 
   test "the update action failure" do
-    discussion = discussions(:validDiscussion)
-    patch discussion_path(discussion), params: { discussion: { title: nil, content: nil } }
+    patch discussion_path(@discussion), params: { discussion: { title: nil, content: nil } }
     assert_response :redirect
     assert_not_empty flash[:errors]
   end
@@ -57,21 +54,18 @@ class DiscussionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "the create action sucess" do
-    discussion = discussions(:validDiscussion)
-    post discussions_path(discussion), params: { discussion: { title: 'Rails is awesome!', content: 'Hello Rails', user_id: '1', discussion_topic_id: '1' } }
+    post discussions_path(@discussion), params: { discussion: { title: 'Rails is awesome!', content: 'Hello Rails', user_id: '1', discussion_topic_id: '1' } }
     assert_response :redirect
   end
 
   test "the create action failure" do
-    discussion = discussions(:validDiscussion)
-    post discussions_path(discussion), params: { discussion: { title: nil, content: nil, user_id: nil, discussion_topic_id: nil } }
+    post discussions_path(@discussion), params: { discussion: { title: nil, content: nil, user_id: nil, discussion_topic_id: nil } }
     assert_response :redirect
     assert_not_empty flash[:errors]
   end
 
   test "the destroy action success" do
-    discussion = discussions(:validDiscussion)
-    delete discussion_path(discussion)
+    delete discussion_path(@discussion)
     assert_response :redirect
   end
 

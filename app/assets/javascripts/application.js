@@ -15,6 +15,10 @@
 //= require activestorage
 //= require bootstrap-sprockets
 //= require_tree .
+
+
+//this toggles the button on the home page, so the user knows
+//how to use the site
 $(document).ready(function(){
   $(".popup-content").hide();
   $("#about").click(function(){
@@ -22,6 +26,7 @@ $(document).ready(function(){
   });
 });
 
+//this keeps the footer at the bottom of the page
 $(document).ready(function() {
   var docHeight = $(window).height();
   var footerHeight = $('#footer').height();
@@ -31,12 +36,15 @@ $(document).ready(function() {
       $('#footer').css('margin-top', 10+ (docHeight - footerTop) + 'px');
 });
 
+//when a user logs in, signs up or logs out then a message is displayed
+//this removes that message after a certain time period
 $(document).ready(function(){
    setTimeout(function(){
       $("p.notice").hide("slow");
    },1000);
 });
 
+//this slowly fades in the discussion topics on the discussion topic page
 $(document).ready(function(){
   $(".topicTile").each(function() {
     $(this).animate({
