@@ -2,6 +2,12 @@ I have been using git, can get code from here https://github.com/samf23/discussi
 bundler I used 2.0.2
 ruby version I used 2.5.0
 
+Changes you may have to make to get it to work on lab machine:
+-in gem file change to ruby 2.5.1
+-see what bundler the lab machine is using bundle -v
+-delete the gemfile.lock
+-do bundle update
+
 Instructions to use are on home page(click button)
 
 More detailed instructions:
