@@ -44,6 +44,10 @@
   margin-left: 15px;
 }
 
+.tablecontainer{
+  overflow-x:auto;
+}
+
 table {
   width: 90%;
   margin: 0 auto;
@@ -60,4 +64,17 @@ table, tr, td {
 thead tr td {
   font-weight: bold;
   font-size: 15px;
+}
+
+@media only screen and (max-width: 900px) {
+  .topicContainer{
+    flex-direction: column;
+    align-items: center;
+    .topicTile {
+      width: 90%;
+    }
+  }
+  table {
+    margin-bottom: 30px;
+  }
 }

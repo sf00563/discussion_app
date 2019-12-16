@@ -2,29 +2,31 @@
 <% provide(:title, "Discussions") %>
 <h1><%= @discussions.count > 0 ? @discussions.first.discussion_topic.topic : @discussions.count%> <%= t 'discussiontopics.show.part_of_title' %></h1>
 <%= link_to "Create Discussion", new_discussion_path(params[:id]), class: "createDiscussion" %>
-<table>
-  <thead>
-    <tr>
-      <td><%= t 'discussiontopics.show.table_header_one' %></td>
-      <td><%= t 'discussiontopics.show.table_header_two' %></td>
-      <td><%= t 'discussiontopics.show.table_header_three' %></td>
-      <td><%= t 'discussiontopics.show.table_header_four' %></td>
-      <td><%= t 'discussiontopics.show.table_header_five' %></td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @discussions.each do |discussion| %>
-    <tr>
-      <td><%= link_to "#{discussion.title}", discussion_path(discussion.id) %></td>
-      <td><%= truncate(discussion.content,:length => 80) %></td>
-      <td><%= discussion.created_at %></td>
-      <td><%= discussion.user.name %></td>
-      <% if current_user.id == discussion.user.id %>
-        <td><%= link_to "Edit", edit_discussion_path(discussion.id), class: "options" %><%= link_to "Delete", discussion_path(discussion.id), class: "options", data: {method: :delete, confirm: "Are you sure?"} %></td>
-      <% else %>
-        <td><%= t 'discussiontopics.show.options_unavaliable' %></td>
+<div class="tablecontainer">
+  <table>
+    <thead>
+      <tr>
+        <td><%= t 'discussiontopics.show.table_header_one' %></td>
+        <td><%= t 'discussiontopics.show.table_header_two' %></td>
+        <td><%= t 'discussiontopics.show.table_header_three' %></td>
+        <td><%= t 'discussiontopics.show.table_header_four' %></td>
+        <td><%= t 'discussiontopics.show.table_header_five' %></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @discussions.each do |discussion| %>
+      <tr>
+        <td><%= link_to "#{discussion.title}", discussion_path(discussion.id) %></td>
+        <td><%= truncate(discussion.content,:length => 80) %></td>
+        <td><%= discussion.created_at %></td>
+        <td><%= discussion.user.name %></td>
+        <% if current_user.id == discussion.user.id %>
+          <td><%= link_to "Edit", edit_discussion_path(discussion.id), class: "options" %><%= link_to "Delete", discussion_path(discussion.id), class: "options", data: {method: :delete, confirm: "Are you sure?"} %></td>
+        <% else %>
+          <td><%= t 'discussiontopics.show.options_unavaliable' %></td>
+        <% end %>
+      </tr>
       <% end %>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
